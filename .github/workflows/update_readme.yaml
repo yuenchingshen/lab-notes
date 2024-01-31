@@ -31,17 +31,12 @@ jobs:
         awk '/## Notes/{p=1;print;system("cat links.txt")}!p' README.md > temp_readme.md
         mv temp_readme.md README.md
 
-    - name: Commit changes
+    - name: Commit and push changes
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add README.md
         git commit -m "Update README with documentation links"
-    
-    - name: Push changes
-      uses: ad-m/github-push-action@v0.7
-      with:
-        branch: ${{ github.ref }}
-        force: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        gh auth login --with-token <<<"${{ secrets.GITHUB_TOKEN }}"
+        gh repo view --json name -q .name --json name -q .name
+        git push
