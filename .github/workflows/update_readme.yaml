@@ -13,22 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '14'
-
-    - name: Install dependencies
-      run: npm install markdown-link-extractor
-
-    - name: Extract Markdown links
-      run: npx markdown-link-extractor "docs/*.md" > links.txt
-
-    - name: Update README
+    - name: Extract Markdown links and update README
       run: |
-        echo "## Notes" > temp_readme.md
+        find docs -type f -name "*.md" -exec awk -v RS= '{gsub(/\n/, " "); print "[" FILENAME "](" FILENAME ")"}' {} \; > links.txt
+        echo "## Documentation" > temp_readme.md
         cat links.txt >> temp_readme.md
-        awk '/## Notes/{p=1;print;system("cat links.txt")}!p' README.md > temp_readme.md
+        awk '/## Documentation/{p=1;print;system("cat links.txt")}!p' README.md > temp_readme.md
         mv temp_readme.md README.md
 
     - name: Commit and push changes
@@ -37,6 +27,4 @@ jobs:
         git config user.email "actions@github.com"
         git add README.md
         git commit -m "Update README with documentation links"
-        gh auth login --with-token <<<"${{ secrets.GITHUB_TOKEN }}"
-        gh repo view --json name -q .name --json name -q .name
         git push
