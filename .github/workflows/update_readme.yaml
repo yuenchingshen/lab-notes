@@ -23,3 +23,15 @@ jobs:
         find docs -type f -name "*.md" -exec awk -v RS= '{gsub(/\n/, " "); print "[" FILENAME "](" FILENAME ")"}' {} \; > links.txt
         awk 'BEGIN{p=1} /^## Notes/{print "## Notes"; system("cat links.txt"); p=0} p' README.md > temp_readme.md
         mv temp_readme.md README.md
+
+    - name: commit
+      run: |
+        git config --global user.email ccbaumler@gmail.com
+        git config --global user.name ccbaumler
+        git add .
+        git commit -m "README update Automation" -a
+          
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
