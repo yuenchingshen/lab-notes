@@ -8,3 +8,5 @@ include:
   - LICENSE.md
 
 theme: jekyll-theme-tactile
+title: [Colton's Lab Notebook Template]
+description: [A simply, easy lab notebook website]
