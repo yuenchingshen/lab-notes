@@ -8,5 +8,4 @@ include:
   - LICENSE.md
 
 theme: jekyll-theme-cayman
-title: [Colton's Lab Notebook Template]
-description: [A simply, easy lab notebook website]
+description: [A simply and easy lab notebook website]
