@@ -1,0 +1,47 @@
+name: Update README with Markdown Links
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install markdown-link-extractor
+
+    - name: Extract Markdown links
+      run: npx markdown-link-extractor "docs/*.md" > links.txt
+
+    - name: Update README
+      run: |
+        echo "## Notes" > temp_readme.md
+        cat links.txt >> temp_readme.md
+        awk '/## Notes/{p=1;print;system("cat links.txt")}!p' README.md > temp_readme.md
+        mv temp_readme.md README.md
+
+    - name: Commit changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add README.md
+        git commit -m "Update README with documentation links"
+    
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.7
+      with:
+        branch: ${{ github.ref }}
+        force: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
