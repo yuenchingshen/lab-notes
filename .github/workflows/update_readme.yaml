@@ -23,6 +23,6 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add README.md
+        git add README.md links.txt
         git commit -m "Update README with documentation links"
         git push
