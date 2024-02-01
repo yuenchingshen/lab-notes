@@ -8,6 +8,7 @@ To create your own website:
 2. Click `Settings` > `Pages`
 3. In the `Source` dropdown, select `Deploy from a branch`
 4. In the `Branch` dropdown, select `main` then click `Save`
+5. Update the title in `index.md` with `[YourName]'s Lab Notebook`
 
 To update your website with your documents:
 1. Consider removing the template file in the `docs` directory
@@ -22,7 +23,7 @@ Each markdown document added to the `docs` directory will become a link on your 
 A basic document template:
 ```
 ---
-title: Week number
+title: Year Week number
 ---
 
 # Goals
