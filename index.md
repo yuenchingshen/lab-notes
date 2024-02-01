@@ -6,6 +6,3 @@ title: Colton's Lab Notebook
 [notes-template](docs/notes-template)
 
 
-[2024-week-1](docs/2024-week-1)
-
-
