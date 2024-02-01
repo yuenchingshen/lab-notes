@@ -4,4 +4,4 @@ title: Colton's Lab Notebook
 
 ## Notes
 [notes-template](docs/notes-template)
-[2024\ week\ 1](docs/2024\ week\ 1)
+[2024-week-1](docs/2024-week-1)
