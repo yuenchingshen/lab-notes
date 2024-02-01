@@ -6,8 +6,8 @@ title: Week number
 In this section I will list the weekly, quarterly, and yearly goals I hope to achieve or have completed this week.
  
 **Weekly:**
-[x] Create a lab notebook repo
-[ ] Read the docs
+- [x]  Create a lab notebook repo
+- [ ]  Read the docs
  
 **Quarterly:**
 - [ ] Present my work to the lab
