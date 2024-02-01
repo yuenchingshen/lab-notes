@@ -26,10 +26,10 @@ jobs:
 
     - name: commit
       run: |
-        git config --global user.email ccbaumler@gmail.com
-        git config --global user.name ccbaumler
-        git add .
-        git commit -m "README update Automation" -a
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config user.name "github-actions[bot]"
+        git commit -am "Automated index.md update"
+          
           
     - name: Push changes
       uses: ad-m/github-push-action@master
