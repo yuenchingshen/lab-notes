@@ -20,7 +20,8 @@ jobs:
 
     - name: Extract Markdown links and update README
       run: |
-        find docs -type f -name "*.md" -exec awk -v RS= '{gsub(/\n/, " "); print "[" FILENAME "](" FILENAME ")"}' {} \; > links.txt
+        find docs -type f -name "*.md" > links.txt
+        awk -F/ '{gsub(/\.md$/, ""); gsub(/ /, "\\ "); printf "[%s](%s)\n", $NF, $0}' links.txt > tmp && mv tmp links.txt
         awk 'BEGIN{p=1} /^## Notes/{print "## Notes"; system("cat links.txt"); p=0} p' index.md > temp_index.md
         mv temp_index.md index.md
 
