@@ -59,3 +59,11 @@ In this section add anything else you may wish to include.
 example:
 Nothing additional to comment this week. Work has been taken allot of my time this week. It's finals, I was not able to complete the goals I thought I would. I got a new hamster and it is very fluffy.
 ```
+
+## Resources
+
+1. [github actions commit bot](https://github.com/orgs/community/discussions/26560#discussioncomment-3531273)
+2. [github markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+3. [github jekyll themes](https://pages.github.com/themes/)
+4. [github theme title fix](https://github.com/pages-themes/cayman/issues/134#issuecomment-1000227220)
+5. [easy markdown to github pages](https://nicolas-van.github.io/easy-markdown-to-github-pages/)
