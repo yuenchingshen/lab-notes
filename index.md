@@ -3,15 +3,5 @@ title: Colton's Lab Notebook
 ---
 
 ## Notes
-[docs/notes-template.md](docs/notes-template.md)
-[docs/notes-template.md](docs/notes-template.md)
-[docs/notes-template.md](docs/notes-template.md)
-[docs/notes-template.md](docs/notes-template.md)
-[docs/notes-template.md](docs/notes-template.md)
-[docs/notes-template.md](docs/notes-template.md)
-[docs/2024 week 1.md](docs/2024 week 1.md)
-[docs/2024 week 1.md](docs/2024 week 1.md)
-[docs/2024 week 1.md](docs/2024 week 1.md)
-[docs/2024 week 1.md](docs/2024 week 1.md)
-[docs/2024 week 1.md](docs/2024 week 1.md)
-[docs/2024 week 1.md](docs/2024 week 1.md)
+[notes-template](docs/notes-template)
+[2024\ week\ 1](docs/2024\ week\ 1)
