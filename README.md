@@ -4,7 +4,7 @@ A simple, easy lab notebook website
 ## Use
 To create your own website:
 
-1. Fork this repo
+1. Fork this repo as `lab-notes`
 2. Click `Settings` > `Pages`
 3. In the `Source` dropdown, select `Deploy from a branch`
 4. In the `Branch` dropdown, select `main` then click `Save`
