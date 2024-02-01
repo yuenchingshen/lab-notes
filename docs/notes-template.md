@@ -1,5 +1,5 @@
 ---
-title: Week number
+title: Year Week number
 ---
 
 # Goals
