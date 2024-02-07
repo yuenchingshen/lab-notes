@@ -1,26 +1,32 @@
 # lab-notes
 A simple, easy lab notebook website
 
-## Use
-To create your own website:
+> - Note: Consider using Hackmd to format each of your markdown files and integrating your hackmd account (look for `Settings` > `Integration`) with github
+
+## Intended Use
+To create your own website!
+
+Start by:
 
 1. Fork this repo as `lab-notes`
 2. Click `Settings` > `Pages`
 3. In the `Source` dropdown, select `Deploy from a branch`
 4. In the `Branch` dropdown, select `main` then click `Save`
-5. Update the title in `index.md` with `[YourName]'s Lab Notebook`
+5. Update the title in `index.md` with `<YourName>'s Lab Notebook`
 
-To update your website with your documents:
-1. Consider removing the template file in the `docs` directory
-2. Add any number of your own markdown documents the `docs` directory
-   - The document files should not contain any whitespaces and must end in `.md`
-   - ~~no whitespaces in file names.md~~
-   - ~~must-contain-.-md-at-the-end~~
+To update your website with your markdown documents:
+
+1. Consider removing the template file in the `docs` directory... or don't and just delete it.
+2. Add any number of your own **markdown** documents the `docs` directory
+   - The document file name should not contain any whitespaces and must end in `.md`
+   	- ~~no whitespaces in file names.md~~
+   	- ~~must-contain-.-md-at-the-end~~
    - 2024-week-1.md
 
 Each markdown document added to the `docs` directory will become a link on your webpage landing page. Each link will take you to the rendered markdown document.
 
 A basic document template:
+
 ```
 ---
 title: Year Week number

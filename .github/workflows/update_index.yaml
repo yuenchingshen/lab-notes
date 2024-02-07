@@ -18,7 +18,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Extract Markdown links and update README
+    - name: Extract Markdown links and update index.md
       run: |
         find docs -type f -name "*.md" > links.txt
         awk -F/ '{gsub(/\.md$/, ""); gsub(/ /, "\\ "); printf "[%s](%s)\n", $NF, $0}' links.txt > tmp && mv tmp links.txt
