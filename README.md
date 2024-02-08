@@ -1,7 +1,8 @@
 # lab-notes
 A simple, easy lab notebook website
 
-> - Note: Consider using Hackmd to format each of your markdown files and integrating your hackmd account (look for `Settings` > `Integration`) with github
+> - Note: Consider integrating your HackMD or Obsidian with your GitHub account. This ***could*** make formatting each of your markdown files a simpler task.
+> - Check out [Issue #1](https://github.com/ccbaumler/lab-notes-template/issues/1)
 
 ## Intended Use
 To create your own website!
