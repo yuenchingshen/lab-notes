@@ -39,8 +39,8 @@ jobs:
     needs: [ conditional_job_check_files ]
     if: ${{needs.conditional_job_check_files.outputs.docs_changed}} == 'True'
     steps:
-    - name: Checkout Repo
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Extract Markdown links and update index.md
       run: |
