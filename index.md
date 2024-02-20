@@ -1,5 +1,5 @@
 ---
-title: Colton's Lab Notebook
+title: Yuen Ching Shen's Lab Notebook
 ---
 
 ## Notes
