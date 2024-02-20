@@ -1,5 +1,5 @@
 ---
-title: Year Week number
+title: 2024 Week 6
 ---
 
 # Goals
