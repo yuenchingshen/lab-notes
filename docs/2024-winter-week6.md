@@ -1,5 +1,5 @@
 ---
-title: 2024 Week 6
+title: 2024 winter Week 6
 ---
 
 # Goals
