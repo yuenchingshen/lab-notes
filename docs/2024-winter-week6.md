@@ -3,34 +3,51 @@ title: 2024 winter Week 6
 ---
 
 # Goals
-In this section I will list the weekly, quarterly, and yearly goals I hope to achieve or have completed this week.
- 
 **Weekly:**
 - [x]  Create a lab notebook repo
-- [ ]  Read the docs
+- [ ]  Move the previous notebook to the website and change the fomate to new notebook style
+- [ ]  follow steps provided on simple-use-case.md
  
 **Quarterly:**
-- [ ] Present my work to the lab
-- [ ] Write some python code
-- [ ] Write some snakemake files
- 
-**Yearly:**
-- [ ] Have a well documented project in github that is functional (if not perfect)
- 
-# Results
-In this section write the verbatim results (eg. copy the code chunks, error reports, plots) that relate to the goals you have achieved this week.
+- [ ] Present my work to the lab, presentation on March 18th
+- [ ] Have an organized notebook
+- [ ] Write some snakemake files 
 
-example: 
-This week I created a lab notebook repo using this method (include the cli arguments and the process below)
+**Yearly:**
+- [ ] have a general understand of what a bioinformatic project is like
+- [ ] build experience, present analysis, annotate like scientist
+- [ ] Have a well documented project in github that is functional
+      
+# Results
+```
+(sourmash) yc22@farm:~$ ./make-pangenome-sketches.py gtdb-rs214-k21.zip -t gtdb-rs214.lineages.sqldb -o gtdb-rs214-k21.pangenomes.genus.zip -k 21 -r genus
+-bash: ./make-pangenome-sketches.py: No such file or directory
+(sourmash) yc22@farm:~$ ls
+2022-database-covers	    gtdb-rs214.lineages.csv    pangenomeproject
+Miniforge3-Linux-x86_64.sh  gtdb-rs214.lineages.sqldb  sourmash
+gtdb-rs214-k21.zip	    miniforge3		       spacegraphcats 
+```
+I was able to make small adjustment to the code if my files are not excatly matching the guide provided. Although these are very basic level skills, I am still glad that I am able to do it. Cause I would not be able to do it last quarter.
+
+```
+(sourmash) yc22@farm:~$ ./pangenomeproject/make-pangenome-sketches.py gtdb-rs214-k21.zip -t gtdb-rs214.lineages.sqldb -o gtdb-rs214-k21.pangenomes.genus.zip -k 21 -r genus 
+loading taxonomies from ['gtdb-rs214.lineages.sqldb']
+found 402709 identifiers in taxdb.
+loading file gtdb-rs214-k21.zip as index => manifest
+...1000 - loading
+...2000 - loading
+...3000 - loading
+...153000 - loading
+...154000 - loading
+...155000 - loading
+```
  
 # Discussion
-In this section explain your results and how they relate to you goals 
+ ```
+...235000 - loading
+```
+It is taking a while to load these data, did not expect it to take more than 10 mintues. Now I wish that I open different tmux session, I could run all of these at the same time and do not need to worry about wifi disconnection...
 
-example:
-I am applying for credit this quarter. Therefore, I chose to create a lab notebook repo in github to continue practicing git and github as it is an important tool for biotech/bioinformatics.
 
 # Journal
-In this section add anything else you may wish to include.
-
-example:
-Nothing additional to comment this week. Work has been taken allot of my time this week. It's finals, I was not able to complete the goals I thought I would. I got a new hamster and it is very fluffy.
+This week is valentine day week, something great happened to me >v< .
