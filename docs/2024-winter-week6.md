@@ -7,6 +7,7 @@ title: 2024 winter Week 6
 - [x]  Create a lab notebook repo
 - [ ]  Move the previous notebook to the website and change the fomate to new notebook style
 - [ ]  follow steps provided on simple-use-case.md
+- [ ]  start planning on visualize data for the presentation
  
 **Quarterly:**
 - [ ] Present my work to the lab, presentation on March 18th
