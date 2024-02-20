@@ -1,5 +1,5 @@
 ---
-title: Yuen Ching Shen's Lab Notebook
+title: Yuen's Lab Notebook
 ---
 
 ## Notes
