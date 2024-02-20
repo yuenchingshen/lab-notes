@@ -50,6 +50,7 @@ loading file gtdb-rs214-k21.zip as index => manifest
 It is taking a while to load these data, did not expect it to take more than 10 mintues. Now I wish that I open different tmux session, I could run all of these at the same time and do not need to worry about wifi disconnection...
 
 Have a question
+
 Should I use gtdb-rs214-k21.zip to run the command to get database for both genus, species and family?
 Or use 'gtdb-rs214-k21.zip' to get database for genus, and run 'gtdb-rs214-k21.pangenomes.genus.zip' to get database to get species database, and then run 'gtdb-rs214-k21.pangenomes.species.zip' to get family database.
 
