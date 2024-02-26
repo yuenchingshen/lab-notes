@@ -1,3 +1,25 @@
+---
+title: 2024 winter Week 6
+---
+
+# Goals
+**Weekly:**
+- [x]  start making python code
+- [ ]  start making presentation slides
+- [ ]  start planning on visualize data for the presentation
+ 
+**Quarterly:**
+- [ ] Present my work to the lab, presentation on March 18th
+- [ ] Have an organized notebook
+- [ ] Write some snakemake files 
+
+**Yearly:**
+- [ ] have a general understand of what a bioinformatic project is like
+- [ ] build experience, present analysis, annotate like scientist
+- [ ] Have a well documented project in github that is functional
+      
+# Results
+try to use sourmash gather to make a small file with only ecoli data, so I could work with smaller data to test out the sankey graph
 
 (sourmash) yc22@farm:~$ ln -s gtdb-rs214.lineages.csv ./
 ln: failed to create symbolic link './gtdb-rs214.lineages.csv': File exists
@@ -63,6 +85,11 @@ py.write_image(fig, 'sankey_diagram.png', scale=2)
 # Open the saved image
 import os
 os.system("open sankey_diagram.png")
+
+
+ 
+# Discussion
+# Journal
 
  
 
