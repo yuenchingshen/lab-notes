@@ -20,19 +20,22 @@ title: 2024 winter Week 6
       
 # Results
 try to use sourmash gather to make a small file with only ecoli data, so I could work with smaller data to test out the sankey graph
+I did not realise that I was following the wrong tutorial, was confused why the code did not work.
 
+```
 (sourmash) yc22@farm:~$ ln -s gtdb-rs214.lineages.csv ./
 ln: failed to create symbolic link './gtdb-rs214.lineages.csv': File exists
-
 (sourmash) yc22@farm:~$ sourmash sketch -o Ecoli.gather.sig --name "s__Escherichia coli" -p scaled=2000,k=21,abund Ecoli.gather_*fastq.gz
  sketch: error: argument subcmd: invalid choice: 'Ecoli.gather.sig' (choose from 'dna', 'rna', 'nucleotide', 'nt', 'fromfile', 'protein', 'aa', 'prot', 'translate')
-
+```
+Then use a code instead of gather to make the file, still works the same
+```
 grep 's__Escherichia coli' data.csv > filtered_data.csv 
+```
 
 
-
- 
-
+the code for sankey graph:
+```
 mport pandas as pd
 import plotly.graph_objects as go
 import plotly.io as py
@@ -85,11 +88,14 @@ py.write_image(fig, 'sankey_diagram.png', scale=2)
 # Open the saved image
 import os
 os.system("open sankey_diagram.png")
-
-
- 
+``` 
 # Discussion
-# Journal
+I tried to plot sankey graph with 1/10 of the gtdb-rs214.lineages.csv data, cause it take quite a while to run and my mac, safari can not handel it.
+The graph turns out looking a bit different from what I expected though, I expect there are different lineage from each hierarch('superkingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species', 'ident'). But for the graph that I generated, only difference between 'species' and 'ident'. Maybe I wrote something wrong...
+The graph:
+https://drive.google.com/file/d/1r82PSofM0nDT-6NbXyul-VGzrJ4gVhmb/view?usp=sharing
 
+# Journal
+I recieved many help to on making the sankey graph from my housemate, it is really nice of them.
  
 
