@@ -36,7 +36,7 @@ grep 's__Escherichia coli' data.csv > filtered_data.csv
 
 the code for sankey graph:
 ```
-mport pandas as pd
+import pandas as pd
 import plotly.graph_objects as go
 import plotly.io as py
 
