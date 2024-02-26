@@ -90,10 +90,34 @@ import os
 os.system("open sankey_diagram.png")
 ``` 
 # Discussion
+
+``` 
+yuenchingshen@Yuens-Air sourmash % python3 script.py                     
+yuenchingshen@Yuens-Air sourmash % cp sankey_diagram.png
+yuenchingshen@Yuens-Air sourmash % 
+yuenchingshen@Yuens-Air sourmash % cp filtered_data.csv2 filtered_data.csv
+yuenchingshen@Yuens-Air sourmash % python3 script.py                      
+yuenchingshen@Yuens-Air sourmash % ls
+filtered_data.csv	sankey_diagram.png	sankey_graph.png
+filtered_data.csv2	sankey_graph.html	script.py
+yuenchingshen@Yuens-Air sourmash % vi filtered_data.csv
+yuenchingshen@Yuens-Air sourmash % vi script.py 
+yuenchingshen@Yuens-Air sourmash % python3 script.py 
+``` 
+
 I tried to plot sankey graph with 1/10 of the gtdb-rs214.lineages.csv data, cause it take quite a while to run and my mac, safari can not handel it.
 The graph turns out looking a bit different from what I expected though, I expect there are different lineage from each hierarch('superkingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species', 'ident'). But for the graph that I generated, only difference between 'species' and 'ident'. Maybe I wrote something wrong...
 The graph:
 https://drive.google.com/file/d/1r82PSofM0nDT-6NbXyul-VGzrJ4gVhmb/view?usp=sharing
+
+When checking the data in the csv file, I know what that there should be more lineage difference.
+``` 
+ident,gtdb_representative,superkingdom,phylum,class,order,family,genus,species
+GCA_000008085.1,t,d__Archaea,p__Nanoarchaeota,c__Nanoarchaeia,o__Nanoarchaeales,f__Nanoarchaeaceae,g__Nanoarchaeum,s__Nanoarchaeum equitans
+GCA_000016605.1,t,d__Archaea,p__Thermoproteota,c__Thermoprotei_A,o__Sulfolobales,f__Sulfolobaceae,g__Metallosphaera,s__Metallosphaera sedula
+GCA_000145985.1,t,d__Archaea,p__Thermoproteota,c__Thermoprotei_A,o__Sulfolobales,f__Ignisphaeraceae,g__Ignisphaera,s__Ignisphaera aggregans
+```
+But the graph just only show a straight thick line.
 
 # Journal
 I recieved many help to on making the sankey graph from my housemate, it is really nice of them.
