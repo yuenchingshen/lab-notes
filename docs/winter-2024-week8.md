@@ -102,9 +102,12 @@ yuenchingshen@Yuens-Air sourmash % python3 script.py
 yuenchingshen@Yuens-Air sourmash % head -n 100 gtdb-rs214.lineages.csv > small.csv 
 yuenchingshen@Yuens-Air sourmash % python3 script.py 
 ```
-
+9data: https://drive.google.com/file/d/1Pg25QUI35iNO1e0OKq-sUXrsO1Iak8-O/view?usp=sharing
+1000data: https://drive.google.com/file/d/1TPktOJOt-3V5xRVmAzUc-zQ10vtdG2tb/view?usp=sharing
+10000data: https://drive.google.com/file/d/1wh0iE6Ez2dksmILDN8IBg0FuZWpz9hjt/view?usp=sharing
 
 # Discussion
+
    
  
 
