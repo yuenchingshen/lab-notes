@@ -107,8 +107,8 @@ yuenchingshen@Yuens-Air sourmash % python3 script.py
 10000data: https://drive.google.com/file/d/1wh0iE6Ez2dksmILDN8IBg0FuZWpz9hjt/view?usp=sharing
 
 # Discussion
-
-   
+the sankey graph seems to work now, should work with larger data set too, but I cannot run files that is too big with my computer.
  
 
 # Journal
+the presentation was going to be on march 4th, did not expect it to be that quick.moved the date to 18th
