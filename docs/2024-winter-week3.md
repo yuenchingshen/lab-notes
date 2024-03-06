@@ -127,7 +127,87 @@ def main():
 if __name__ == '__main__':
     sys.exit(main())
 ```
+```
+#shebang sequence to tell the computer to execute the script with python in user's environment
+#! /usr/bin/env python
+import argparse  # module to build command argument
+import sys  # module for python variable
 
+from collections import defaultdict  # default dictionary, default variable for value and key pair
+import sourmash  # to minhash and compute sketches
+from sourmash import sourmash_args  # to build sourmash command argument
+from sourmash.tax import tax_utils  # module to run taxonomy related data 
+
+def main():
+    # Create an argument parser to handle command-line arguments
+    p = argparse.ArgumentParser()
+    
+    # Add arguments to the parser
+    p.add_argument(
+        '-t', '--taxonomy-file', '--taxonomy', metavar='FILE',
+        action="extend", nargs='+', required=True,
+        help='database lineages file'
+    )
+    p.add_argument(
+        'sketches', nargs='+',
+        help='sketches to combine'
+    )
+    p.add_argument('--scaled', default=1000, type=int)
+    p.add_argument('-k', '--ksize', default=31, type=int)
+    p.add_argument('-o', '--output', required=True)
+    p.add_argument('-r', '--rank', default='species')
+    
+    # Parse the command-line arguments
+    args = p.parse_args()
+
+    # Load taxonomies from the specified file(s)
+    print(f"loading taxonomies from {args.taxonomy_file}")
+    taxdb = sourmash.tax.tax_utils.MultiLineageDB.load(args.taxonomy_file)
+    print(f"found {len(taxdb)} identifiers in taxdb.")
+
+    # Create dictionaries to store data
+    revtax_d = {}  # dictionary to store reverse taxonomy information
+    ident_d = {}  # dictionary to store identifiers
+
+    # Process each sketch file
+    for filename in args.sketches:
+        print(f"loading file {filename} as index => manifest")
+        db = sourmash_args.load_file_as_index(filename)  # convert the sketch file to index file
+        db = db.select(ksize=args.ksize)  # select ksize, the smallest ksize?
+        mf = db.manifest  # Manifests are catalogs of signature metadata in sourmash
+        assert mf, "no matching sketches for given ksize!?"
+
+        # Load and merge sketches
+        for n, ss in enumerate(db.signatures()):  # n is index, ss is signature
+            if n and n % 1000 == 0:  # message print every 1000 loop
+                print(f'...{n} - loading')
+            name = ss.name  # take sourmash signature variable as a variable  
+            md5sum = ss.md5sum()  
+
+            ident = tax_utils.get_ident(name)
+
+            # Grab relevant lineage name
+            lineage_tup = taxdb[ident]
+            lineage_tup = tax_utils.RankLineageInfo(lineage=lineage_tup)
+            lineage_pair = lineage_tup.lineage_at_rank(args.rank)
+            lineage_name = lineage_pair[-1].name
+
+            # Pick an ident to represent this set of pangenome sketches
+            ident_d[lineage_name] = ident  # ok if overwrite...
+
+            # Track merged sketches
+            mh = revtax_d.get(lineage_name)
+            if mh is None:
+                mh = ss.minhash.to_mutable()
+                revtax_d[lineage_name] = mh
+            else:  # merge to collect sketches related for same lineage or taxa
+                mh += ss.minhash
+
+    # Save the merged sketches
+    with sourmash_args.SaveSignaturesToLocation(args.output) as save_sigs:
+        for n, (lineage_name, ident) in enumerate(ident_d.items()):
+            if n and n % 1000 == 0:
+```
 # Discussion
 -tried running the script,umm error
 ```
