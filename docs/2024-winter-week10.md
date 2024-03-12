@@ -21,6 +21,11 @@ title: 2024 winter Week 10
 google slides presentation:
 https://docs.google.com/presentation/d/1jGW5t6_eAV8MdUiVV45bMNcwFQtgd-IFQdaqy-ywJAs/edit?usp=sharing
 
+to prove that the hypothesis actually work and the sourmash gather does improve the result:
+unzip gtdb-rs214-k21.pangenomes.species.zip
+sourmash gather -k 21 ecoli_hashes.sig gtdb-rs214-k21.pangenomes.species/*.sig.zip -o ecoli_gather_result.csv
+
+-o /group/ctbroowngrp/scratch/yc22/
 # Discussion
  
 # Journal
